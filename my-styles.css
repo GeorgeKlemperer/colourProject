@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,300&display=swap");
+
+html {
+  font-size: 16px;
+  font-family: "Newsreader", serif;
+  width: 100vw; /*Sets width of html too 100% viewport width*/
+  height: 100%; /*Sets height of html too 100% viewport width*/
+  overflow: hidden; /*Clips content so overflow is hidden (stops scrolling)*/
+}
+
+body {
+  width: 90%;
+  margin: 0 auto; /*When you set two values on a property like margin or padding, the first value affects the element's top and bottom side (setting it to 0 in this case); the second value affects the left and right side. (Here, auto is a special value that divides the available horizontal space evenly between left and right)/
+      /* background-image: url("images/akitsushima.jpeg"); */
+  background-color: white;
+  padding: 0 20px 20px 20px;
+  text-align: justify;
+  text-justify: inter-word;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.date {
+  text-align: left;
+  margin: 10px 0;
+}
+
+#titlebackground {
+  width: 100vw; /*Seets width of element too 100% viewport width*/
+  position: relative;
+  left: 50%; /*centers element horizontally*/
+  right: 50%; /*centers element horizontally*/
+  margin-left: -50vw; /*This centers the element horizontally within the viewport by setting negative margins of 50% of the viewport width on both sides.*/
+  margin-right: -50vw; /*This centers the element horizontally within the viewport by setting negative margins of 50% of the viewport width on both sides.*/
+
+  text-align: center;
+  border-bottom: 5px solid black;
+  /* border-top: 5px solid black; */
+}
+
+#paletteContainer {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 0 0 150px 0;
+}
+
+.paletteBlock {
+  height: 150px;
+  width: 150px;
+  background-color: black;
+  margin: 10px;
+}
+
+
+.smlinks {
+  margin: 20px 0 0 0;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+}
+
+.sml {
+  line-height: 0;
+  margin: 10px 0;
+}
+
+.social-media-logos {
+  height: 40px;
+  width: 40px;
+  padding: 5px;
+}
+
+.social-media-logos:hover {
+  -webkit-filter: opacity(50%);
+}
+/*sets images with "social-media-logos" class to a set gheight width and padding */
+
+#copyright {
+  margin: 16px 0 0 0;
+}
+
+
+@media (max-width: 800px) {
+  #paletteContainer {
+    flex-direction: column;
+    align-content: center;
+  }
+
+  html {
+    height: fit-content;
+    overflow: auto;
+  }
+
+  .smlinks {
+    margin: 20px 0 0 0;
+    position: relative;
+    left: 20px;
+    bottom: 20px;
+  }
+}
+/* @media is used in media queries to apply different styles in different conditions. Media queries can be used to check: width and height of viewport, width and height of device, orientation of device, and resolution.*/
+/* This @media rule will change "paletteContainer" to a column when viewport < "max-width"*/
