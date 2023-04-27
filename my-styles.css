@@ -9,16 +9,15 @@ html {
 }
 
 body {
-  width: 90%;
-  margin: 0 auto; /*When you set two values on a property like margin or padding, the first value affects the element's top and bottom side (setting it to 0 in this case); the second value affects the left and right side. (Here, auto is a special value that divides the available horizontal space evenly between left and right)/
-      /* background-image: url("images/akitsushima.jpeg"); */
+  width: 98%;
+  margin: 0 auto; /*When you set two values on a property like margin or padding, the first value affects the element's top and bottom side (setting it to 0 in this case); the second value affects the left and right side. (Here, auto is a special value that divides the available horizontal space evenly between left and right)*/
   background-color: white;
-  padding: 0 20px 20px 20px;
+  padding: 0;
   text-align: justify;
   text-justify: inter-word;
   height: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* body is set to flexbox with column direction to make child elements stack vertically. This means we can set the palette conatiner <div> to a flex property of 1 so it will fill al available space*/
 }
 
 .date {
@@ -27,7 +26,7 @@ body {
 }
 
 #titlebackground {
-  width: 100vw; /*Seets width of element too 100% viewport width*/
+  width: 100vw; /*Sets width of element too 100% viewport width*/
   position: relative;
   left: 50%; /*centers element horizontally*/
   right: 50%; /*centers element horizontally*/
@@ -40,12 +39,11 @@ body {
 }
 
 #paletteContainer {
-  flex: 1 1 auto;
+  flex: 1 1 auto; /*flex: 1 1 auto;, the first value (flex-grow) is set to 1, meaning the item can grow if there is extra space in the container. The second value (flex-shrink) is also set to 1, meaning the item can shrink if necessary. The third value (flex-basis) is set to auto, which means the item will be sized based on its content.*/
   display: flex;
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  margin: 0 0 150px 0;
 }
 
 .paletteBlock {
@@ -53,12 +51,18 @@ body {
   width: 150px;
   background-color: black;
   margin: 10px;
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+.paletteBlockText {
+  text-align: center;
+  color: white;
 }
 
 
 .smlinks {
   margin: 20px 0 0 0;
-  position: absolute;
   left: 20px;
   bottom: 20px;
 }
@@ -80,7 +84,7 @@ body {
 /*sets images with "social-media-logos" class to a set gheight width and padding */
 
 #copyright {
-  margin: 16px 0 0 0;
+  margin: 10px 0;
 }
 
 
@@ -93,13 +97,6 @@ body {
   html {
     height: fit-content;
     overflow: auto;
-  }
-
-  .smlinks {
-    margin: 20px 0 0 0;
-    position: relative;
-    left: 20px;
-    bottom: 20px;
   }
 }
 /* @media is used in media queries to apply different styles in different conditions. Media queries can be used to check: width and height of viewport, width and height of device, orientation of device, and resolution.*/
