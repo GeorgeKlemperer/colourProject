@@ -38,6 +38,14 @@ body {
   /* border-top: 5px solid black; */
 }
 
+.header {
+  width: 100%;
+}
+
+.toolbar {
+
+}
+
 #paletteContainer {
   flex: 1 1 auto; /*flex: 1 1 auto;, the first value (flex-grow) is set to 1, meaning the item can grow if there is extra space in the container. The second value (flex-shrink) is also set to 1, meaning the item can shrink if necessary. The third value (flex-basis) is set to auto, which means the item will be sized based on its content.*/
   display: flex;
@@ -47,10 +55,11 @@ body {
 }
 
 .paletteBlock {
-  height: 150px;
+  height: 100%;
   width: 150px;
+  flex: 1 1 auto;
   background-color: black;
-  margin: 10px;
+  /* margin: 10px; */
   display: flex;
   flex-direction: column-reverse;
 }
@@ -58,6 +67,15 @@ body {
 .paletteBlockText {
   text-align: center;
   color: white;
+  font-size: 20px;
+  margin: 10px 0 25px 0;
+}
+
+.colourName {
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  margin: 10px 0;
 }
 
 
@@ -97,6 +115,18 @@ body {
   html {
     height: fit-content;
     overflow: auto;
+  }
+
+  .paletteBlock{
+    height: 150px;
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .paletteBlockText {
+    text-align: center;
+    color: white;
+    font-size: 20px;
   }
 }
 /* @media is used in media queries to apply different styles in different conditions. Media queries can be used to check: width and height of viewport, width and height of device, orientation of device, and resolution.*/
