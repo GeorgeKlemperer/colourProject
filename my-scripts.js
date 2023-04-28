@@ -2,6 +2,9 @@ const date = new Date();
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 document.getElementById("date").innerHTML = days[date.getDay()]+" "+date.getDate()+"/"+(date.getMonth()+1)+"/"+date.getFullYear();
 
+
+
+
 //This code adds a keydown listener event for when the spacebar is pressed (key code 32) and the target of the event is the document body. If both conditions are true the function returns false, which prevents the default action of the space bar key, which is to scroll down the page. In other words, this code disables scrolling of the webpage when the space bar is pressed. This is to stop a bug when the viewer window is narrow that scrolls the page when randomising the colours.
 window.onkeydown = function(e) { 
   return !(e.keyCode == 32 && e.target == document.body);
@@ -26,6 +29,7 @@ function randomColour1() {
 
   // console.log(blackOrWhiteText(colour, white, black))
   document.getElementById("paletteBlockTextOne").style.color = blackOrWhiteText(colour);
+  document.getElementById("titlebackground").style.borderColor = colour; // Add this line to update the border color
 }     
 
 function randomColour2() {
