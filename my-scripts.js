@@ -12,25 +12,32 @@ const randomColour = () => {
   let colour = '#';
   for (let i = 0; i < 6; i++){
      const random = Math.random();
-     const bit = (random * 16) | 0;
+     const bit = Math.floor(random * 16);
      colour += (bit).toString(16);
   };
   return colour;
 };
 console.log(randomColour());
 
-
-
 function randomColour1() {
-  let colour1 = randomColour();
-  document.getElementById("paletteBlockTextOne").innerHTML = `${colour1}`;
-  document.getElementById("colourOne").style.backgroundColor = colour1;
-}
+  let colour = randomColour();
+  document.getElementById("paletteBlockTextOne").innerHTML = `${colour}`;
+  document.getElementById("colourOne").style.backgroundColor = colour;
+
+  let white = "#FFFFFF"
+  let black = "#000000"
+  // console.log(blackOrWhiteText(colour, white, black))
+  document.getElementById("paletteBlockTextOne").style.color = blackOrWhiteText(colour, white, black);
+}     
 
 function randomColour2() {
-  let colour1 = randomColour();
-  document.getElementById("paletteBlockTextTwo").innerHTML = `${colour1}`;
-  document.getElementById("colourTwo").style.backgroundColor = colour1;
+  let colour = randomColour();
+  document.getElementById("paletteBlockTextTwo").innerHTML = `${colour}`;
+  document.getElementById("colourTwo").style.backgroundColor = colour;
+
+  let white = "#FFFFFF"
+  let black = "#000000"
+  document.getElementById("paletteBlockTextTwo").style.color = blackOrWhiteText(colour, white, black);
 }
 
 // Functions are called when page is loaded for inital random colours.
@@ -45,3 +52,12 @@ document.addEventListener('keyup', event => {
     randomColour2()
   }
 })
+
+// This code takes a background colour and returns whether the text on it should be black or white. This formula takes into account the fact that the human eye is more sensitive to green light than to red or blue light. The result is compared to a threshold of 150, and if it is greater than 150, the function returns the black color. Otherwise, it returns the white color.
+function blackOrWhiteText(bgColour, white, black) {
+  var colour = (bgColour.charAt(0) === '#') ? bgColour.substring(1, 7) : bgColour; // Here functioon checks if bgColour starts with a hashtag or not. If true then extracts hex code from next 6 characters.
+  var r = parseInt(colour.substring(0, 2), 16); // hex to R
+  var g = parseInt(colour.substring(2, 4), 16); // hex to G
+  var b = parseInt(colour.substring(4, 6), 16); // hex to B
+  return (((r * 0.299) + (g * 0.587) + (b * 0.114)) > 150) ?  black : white; // If perceived brightness is greater than 150 then expression evaluates as true and black is returned. Otherwise expression evaluates to false and white is returned.
+}
