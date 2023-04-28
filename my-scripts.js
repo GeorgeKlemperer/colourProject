@@ -24,10 +24,8 @@ function randomColour1() {
   document.getElementById("paletteBlockTextOne").innerHTML = `${colour}`;
   document.getElementById("colourOne").style.backgroundColor = colour;
 
-  let white = "#FFFFFF"
-  let black = "#000000"
   // console.log(blackOrWhiteText(colour, white, black))
-  document.getElementById("paletteBlockTextOne").style.color = blackOrWhiteText(colour, white, black);
+  document.getElementById("paletteBlockTextOne").style.color = blackOrWhiteText(colour);
 }     
 
 function randomColour2() {
@@ -35,9 +33,7 @@ function randomColour2() {
   document.getElementById("paletteBlockTextTwo").innerHTML = `${colour}`;
   document.getElementById("colourTwo").style.backgroundColor = colour;
 
-  let white = "#FFFFFF"
-  let black = "#000000"
-  document.getElementById("paletteBlockTextTwo").style.color = blackOrWhiteText(colour, white, black);
+  document.getElementById("paletteBlockTextTwo").style.color = blackOrWhiteText(colour);
 }
 
 // Functions are called when page is loaded for inital random colours.
@@ -54,10 +50,10 @@ document.addEventListener('keyup', event => {
 })
 
 // This code takes a background colour and returns whether the text on it should be black or white. This formula takes into account the fact that the human eye is more sensitive to green light than to red or blue light. The result is compared to a threshold of 150, and if it is greater than 150, the function returns the black color. Otherwise, it returns the white color.
-function blackOrWhiteText(bgColour, white, black) {
+function blackOrWhiteText(bgColour) {
   var colour = (bgColour.charAt(0) === '#') ? bgColour.substring(1, 7) : bgColour; // Here functioon checks if bgColour starts with a hashtag or not. If true then extracts hex code from next 6 characters.
   var r = parseInt(colour.substring(0, 2), 16); // hex to R
   var g = parseInt(colour.substring(2, 4), 16); // hex to G
   var b = parseInt(colour.substring(4, 6), 16); // hex to B
-  return (((r * 0.299) + (g * 0.587) + (b * 0.114)) > 150) ?  black : white; // If perceived brightness is greater than 150 then expression evaluates as true and black is returned. Otherwise expression evaluates to false and white is returned.
+  return (((r * 0.299) + (g * 0.587) + (b * 0.114)) > 150) ?  "#000000" : "#FFFFFF"; // If perceived brightness is greater than 150 then expression evaluates as true and black ("#000000") is returned. Otherwise expression evaluates to false and white ("#FFFFFF") is returned.
 }
