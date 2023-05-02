@@ -31,8 +31,8 @@ function randomColour1() {
   document.getElementById("paletteBlockTextOne").style.color = blackOrWhiteText(colour); // Changes palette blcok text to black or white depending on randomly generated BG colour.
   document.getElementById("titlebackground").style.borderColor = colour; // Add this line to update the border color.
 
-  // document.getElementById("color-picker1").value = colour; //Makes colour selector match BG colour when new random palette is generated.
-  document.getElementById("color-picker1").value = "#000000"; //Makes colour selector go black when new random palette is generated.
+  document.getElementById("color-picker1").value = colour; //Makes colour selector match BG colour when new random palette is generated.
+  // document.getElementById("color-picker1").value = "#000000"; //Makes colour selector go black when new random palette is generated.
 }     
 
 function randomColour2() {
@@ -42,7 +42,8 @@ function randomColour2() {
 
   document.getElementById("paletteBlockTextTwo").style.color = blackOrWhiteText(colour); // Changes palette blcok text to black or white depending on randomly generated BG colour.
 
-  document.getElementById("color-picker2").value = "#000000"; //Makes colour selector go black when new random palette is generated.
+  document.getElementById("color-picker2").value = colour; //Makes colour selector match BG colour when new random palette is generated.
+  // document.getElementById("color-picker2").value = "#000000"; //Makes colour selector go black when new random palette is generated.
 }
 
 function randomColour3() {
@@ -52,7 +53,8 @@ function randomColour3() {
 
   document.getElementById("paletteBlockTextThree").style.color = blackOrWhiteText(colour); // Changes palette blcok text to black or white depending on randomly generated BG colour.
 
-  document.getElementById("color-picker3").value = "#000000"; //Makes colour selector go black when new random palette is generated.
+  document.getElementById("color-picker3").value = colour; //Makes colour selector match BG colour when new random palette is generated.
+  // document.getElementById("color-picker3").value = "#000000"; //Makes colour selector go black when new random palette is generated.
 }
 
 function randomColour4() {
@@ -62,7 +64,8 @@ function randomColour4() {
 
   document.getElementById("paletteBlockTextFour").style.color = blackOrWhiteText(colour); // Changes palette blcok text to black or white depending on randomly generated BG colour.
 
-  document.getElementById("color-picker4").value = "#000000"; //Makes colour selector go black when new random palette is generated.
+  document.getElementById("color-picker4").value = colour; //Makes colour selector match BG colour when new random palette is generated.
+  // document.getElementById("color-picker4").value = "#000000"; //Makes colour selector go black when new random palette is generated.
 }
 
 function randomColour5() {
@@ -72,7 +75,8 @@ function randomColour5() {
 
   document.getElementById("paletteBlockTextFive").style.color = blackOrWhiteText(colour); // Changes palette blcok text to black or white depending on randomly generated BG colour.
 
-  document.getElementById("color-picker5").value = "#000000"; //Makes colour selector go black when new random palette is generated.
+  document.getElementById("color-picker5").value = colour; //Makes colour selector match BG colour when new random palette is generated.
+  // document.getElementById("color-picker5").value = "#000000"; //Makes colour selector go black when new random palette is generated.
 }
 
 // Functions are called when page is loaded for inital random colours.
