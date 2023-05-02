@@ -76,6 +76,11 @@ body {
 
 .colourPickerContainer > input {
   margin: 5px 0 10px 0;
+  /* cursor: pointer; */
+}
+
+.colourPickerContainer > input:hover {
+  opacity: 50%;
 }
 
 .paletteBlockText {
