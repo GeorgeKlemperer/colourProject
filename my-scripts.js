@@ -28,8 +28,11 @@ function randomColour1() {
   document.getElementById("colourOne").style.backgroundColor = colour;
 
   // console.log(blackOrWhiteText(colour, white, black))
-  document.getElementById("paletteBlockTextOne").style.color = blackOrWhiteText(colour);
-  document.getElementById("titlebackground").style.borderColor = colour; // Add this line to update the border color
+  document.getElementById("paletteBlockTextOne").style.color = blackOrWhiteText(colour); // Changes palette blcok text to black or white depending on randomly generated BG colour.
+  document.getElementById("titlebackground").style.borderColor = colour; // Add this line to update the border color.
+
+  // document.getElementById("color-picker1").value = colour; //Makes colour selector match BG colour when new random palette is generated.
+  document.getElementById("color-picker1").value = "#000000"; //Makes colour selector go black when new random palette is generated.
 }     
 
 function randomColour2() {
@@ -37,12 +40,47 @@ function randomColour2() {
   document.getElementById("paletteBlockTextTwo").innerHTML = `${colour}`;
   document.getElementById("colourTwo").style.backgroundColor = colour;
 
-  document.getElementById("paletteBlockTextTwo").style.color = blackOrWhiteText(colour);
+  document.getElementById("paletteBlockTextTwo").style.color = blackOrWhiteText(colour); // Changes palette blcok text to black or white depending on randomly generated BG colour.
+
+  document.getElementById("color-picker2").value = "#000000"; //Makes colour selector go black when new random palette is generated.
+}
+
+function randomColour3() {
+  let colour = randomColour();
+  document.getElementById("paletteBlockTextThree").innerHTML = `${colour}`;
+  document.getElementById("colourThree").style.backgroundColor = colour;
+
+  document.getElementById("paletteBlockTextThree").style.color = blackOrWhiteText(colour); // Changes palette blcok text to black or white depending on randomly generated BG colour.
+
+  document.getElementById("color-picker3").value = "#000000"; //Makes colour selector go black when new random palette is generated.
+}
+
+function randomColour4() {
+  let colour = randomColour();
+  document.getElementById("paletteBlockTextFour").innerHTML = `${colour}`;
+  document.getElementById("colourFour").style.backgroundColor = colour;
+
+  document.getElementById("paletteBlockTextFour").style.color = blackOrWhiteText(colour); // Changes palette blcok text to black or white depending on randomly generated BG colour.
+
+  document.getElementById("color-picker4").value = "#000000"; //Makes colour selector go black when new random palette is generated.
+}
+
+function randomColour5() {
+  let colour = randomColour();
+  document.getElementById("paletteBlockTextFive").innerHTML = `${colour}`;
+  document.getElementById("colourFive").style.backgroundColor = colour;
+
+  document.getElementById("paletteBlockTextFive").style.color = blackOrWhiteText(colour); // Changes palette blcok text to black or white depending on randomly generated BG colour.
+
+  document.getElementById("color-picker5").value = "#000000"; //Makes colour selector go black when new random palette is generated.
 }
 
 // Functions are called when page is loaded for inital random colours.
 randomColour1()
 randomColour2()
+randomColour3()
+randomColour4()
+randomColour5()
 
 // Listener event runs random colour functions when spacebar is pressed.
 document.addEventListener('keyup', event => {
@@ -50,6 +88,9 @@ document.addEventListener('keyup', event => {
     // console.log('Space pressed')
     randomColour1()
     randomColour2()
+    randomColour3()
+    randomColour4()
+    randomColour5()
   }
 })
 
@@ -61,3 +102,40 @@ function blackOrWhiteText(bgColour) {
   var b = parseInt(colour.substring(4, 6), 16); // hex to B
   return (((r * 0.299) + (g * 0.587) + (b * 0.114)) > 150) ?  "#000000" : "#FFFFFF"; // If perceived brightness is greater than 150 then expression evaluates as true and black ("#000000") is returned. Otherwise expression evaluates to false and white ("#FFFFFF") is returned.
 }
+
+
+///Colour Selector Code
+const colorPicker1 = document.getElementById("color-picker1");
+colorPicker1.addEventListener("input", function() {
+  document.getElementById("colourOne").style.backgroundColor = colorPicker1.value; //Changes palette background colour to picker value.
+  document.getElementById("paletteBlockTextOne").innerHTML = colorPicker1.value; //Changes palette blocks text to picker value (picker value is a hex code string)
+  document.getElementById("paletteBlockTextOne").style.color = blackOrWhiteText(colorPicker1.value); //Changes palette block text to black or white depending on colour picker 2's value.
+});
+
+const colorPicker2 = document.getElementById("color-picker2");
+colorPicker2.addEventListener("input", function() {
+  document.getElementById("colourTwo").style.backgroundColor = colorPicker2.value; //Changes palette background colour to picker value.
+  document.getElementById("paletteBlockTextTwo").innerHTML = colorPicker2.value; //Changes palette blocks text to picker value (picker value is a hex code string)
+  document.getElementById("paletteBlockTextTwo").style.color = blackOrWhiteText(colorPicker2.value); //Changes palette block text to black or white depending on colour picker 2's value.
+});
+
+const colorPicker3 = document.getElementById("color-picker3");
+colorPicker3.addEventListener("input", function() {
+  document.getElementById("colourThree").style.backgroundColor = colorPicker3.value; //Changes palette background colour to picker value.
+  document.getElementById("paletteBlockTextThree").innerHTML = colorPicker3.value; //Changes palette blocks text to picker value (picker value is a hex code string)
+  document.getElementById("paletteBlockTextThree").style.color = blackOrWhiteText(colorPicker3.value); //Changes palette block text to black or white depending on colour picker 2's value.
+});
+
+const colorPicker4 = document.getElementById("color-picker4");
+colorPicker4.addEventListener("input", function() {
+  document.getElementById("colourFour").style.backgroundColor = colorPicker4.value; //Changes palette background colour to picker value.
+  document.getElementById("paletteBlockTextFour").innerHTML = colorPicker4.value; //Changes palette blocks text to picker value (picker value is a hex code string)
+  document.getElementById("paletteBlockTextFour").style.color = blackOrWhiteText(colorPicker4.value); //Changes palette block text to black or white depending on colour picker 2's value.
+});
+
+const colorPicker5 = document.getElementById("color-picker5");
+colorPicker5.addEventListener("input", function() {
+  document.getElementById("colourFive").style.backgroundColor = colorPicker5.value; //Changes palette background colour to picker value.
+  document.getElementById("paletteBlockTextFive").innerHTML = colorPicker5.value; //Changes palette blocks text to picker value (picker value is a hex code string)
+  document.getElementById("paletteBlockTextFive").style.color = blackOrWhiteText(colorPicker5.value); //Changes palette block text to black or white depending on colour picker 2's value.
+});

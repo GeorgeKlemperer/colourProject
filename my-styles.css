@@ -58,10 +58,24 @@ body {
   height: 100%;
   width: 150px;
   flex: 1 1 auto;
-  background-color: black;
+  background-color: grey;
   /* margin: 10px; */
   display: flex;
   flex-direction: column-reverse;
+  /* text-align: center; */
+}
+
+.colourPickerContainer {
+  text-align: center;
+}
+
+.colourPickerContainer > label {
+  font-size: 12px;
+  margin: 10px;
+}
+
+.colourPickerContainer > input {
+  margin: 5px 0 10px 0;
 }
 
 .paletteBlockText {
