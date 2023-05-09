@@ -46,6 +46,15 @@ body {
 
 }
 
+#paletteButton {
+  text-align: center;
+  position: relative;
+  left: 50%; /*centers element horizontally*/
+  transform: translateX(-50%); /*centers element horizontally*/
+  margin: 0 0 5px 0;
+  display: none;
+}
+
 #paletteContainer {
   flex: 1 1 auto; /*flex: 1 1 auto;, the first value (flex-grow) is set to 1, meaning the item can grow if there is extra space in the container. The second value (flex-shrink) is also set to 1, meaning the item can shrink if necessary. The third value (flex-basis) is set to auto, which means the item will be sized based on its content.*/
   display: flex;
@@ -150,3 +159,15 @@ body {
 }
 /* @media is used in media queries to apply different styles in different conditions. Media queries can be used to check: width and height of viewport, width and height of device, orientation of device, and resolution.*/
 /* This @media rule will change "paletteContainer" to a column when viewport < "max-width"*/
+
+@media (max-width: 800px) {
+  /* code reveals paletteButton on phone */
+  #paletteButton {
+    text-align: center;
+    position: relative;
+    left: 50%; /*centers element horizontally*/
+    transform: translateX(-50%); /*centers element horizontally*/
+    margin: 0 0 5px 0;
+    display:inline;
+  }
+}

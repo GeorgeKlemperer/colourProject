@@ -98,6 +98,14 @@ document.addEventListener('keyup', event => {
   }
 })
 
+function buttonFunction() {
+    randomColour1()
+    randomColour2()
+    randomColour3()
+    randomColour4()
+    randomColour5()
+}
+
 // This code takes a background colour and returns whether the text on it should be black or white. This formula takes into account the fact that the human eye is more sensitive to green light than to red or blue light. The result is compared to a threshold of 150, and if it is greater than 150, the function returns the black color. Otherwise, it returns the white color.
 function blackOrWhiteText(bgColour) {
   var colour = (bgColour.charAt(0) === '#') ? bgColour.substring(1, 7) : bgColour; // Here functioon checks if bgColour starts with a hashtag or not. If true then extracts hex code from next 6 characters.
